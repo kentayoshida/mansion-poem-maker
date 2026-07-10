@@ -54,24 +54,28 @@ type ImageAxis = (typeof IMAGE_AXES)[number];
 // 文字・ロゴ・人物は入れない。上部に空の余白を残す（縦書きポエム用）。
 const BEAM_BASE =
   "Photorealistic high-altitude aerial bird's-eye drone view looking down over a wide Tokyo " +
-  "townscape, showing the whole cityscape sprawl (not a single building close-up), " +
-  "with a single tall vertical pillar/beam of light shooting straight up from one point " +
-  "in the city, marking a future building site. Wide open sky at the top for negative space. " +
-  "Cinematic real-estate hero visual. No text, no logos, no people. Vertical 3:4 composition.";
+  "townscape, showing the whole cityscape sprawl (not a single building close-up). " +
+  "One RECTANGULAR building plot on the ground is highlighted and glowing, and a tall vertical " +
+  "column of light shaped like a RECTANGULAR PRISM (clear rectangular cross-section, like a " +
+  "luminous translucent box) rises straight up from that rectangular footprint, making the " +
+  "future building site stand out. The light is a rectangular volume — NOT a thin line and NOT " +
+  "a circular pool; the glowing footprint on the ground is a clean rectangle. " +
+  "Wide open sky at the top for negative space. Cinematic real-estate hero visual. " +
+  "No text, no logos, no people. Vertical 3:4 composition.";
 
 const AXIS_PROMPTS: Record<ImageAxis, string> = {
   toshin:
-    `${BEAM_BASE} Scene: a vast glittering Tokyo night skyline at twilight; the light beam is a radiant golden-amber pillar; deep blue and gold tones; prestigious mood.`,
+    `${BEAM_BASE} Scene: a vast glittering Tokyo night skyline at twilight; the rectangular light volume glows radiant golden-amber; deep blue and gold tones; prestigious mood.`,
   shizen:
-    `${BEAM_BASE} Scene: a leafy green Tokyo residential district by day with tree-lined avenues and parks; the light beam is a soft pale-green white pillar; fresh green tones; calm natural mood.`,
+    `${BEAM_BASE} Scene: a leafy green Tokyo residential district by day with tree-lined avenues and parks; the rectangular light volume glows soft pale-green white; fresh green tones; calm natural mood.`,
   bunka:
-    `${BEAM_BASE} Scene: a historic Japanese townscape with temple roofs and old streets in the evening; the light beam is a warm amber pillar; deep crimson and amber tones; cultural nostalgic mood.`,
+    `${BEAM_BASE} Scene: a historic Japanese townscape with temple roofs and old streets in the evening; the rectangular light volume glows warm amber; deep crimson and amber tones; cultural nostalgic mood.`,
   kurashi:
-    `${BEAM_BASE} Scene: a friendly low-rise Tokyo neighborhood with a shopping street at golden hour; the light beam is a warm white pillar; cozy warm tones; everyday-life mood.`,
+    `${BEAM_BASE} Scene: a friendly low-rise Tokyo neighborhood with a shopping street at golden hour; the rectangular light volume glows warm white; cozy warm tones; everyday-life mood.`,
   keikan:
-    `${BEAM_BASE} Scene: a Tokyo cityscape with a wide horizon and distant hills by day; the light beam is a cool light-blue white pillar; teal and light-blue tones; scenic airy mood.`,
+    `${BEAM_BASE} Scene: a Tokyo cityscape with a wide horizon and distant hills by day; the rectangular light volume glows cool light-blue white; teal and light-blue tones; scenic airy mood.`,
   kaiho:
-    `${BEAM_BASE} Scene: a bright open Tokyo bay waterfront with canals and towers by day under a wide sky; the light beam is a bright white-blue pillar; cool light-blue tones; spacious liberating mood.`,
+    `${BEAM_BASE} Scene: a bright open Tokyo bay waterfront with canals and towers by day under a wide sky; the rectangular light volume glows bright white-blue; cool light-blue tones; spacious liberating mood.`,
 };
 
 const MODEL = process.env.GEMINI_MODEL ?? "gemini-2.5-flash-image";
