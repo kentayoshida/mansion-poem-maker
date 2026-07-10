@@ -8,15 +8,15 @@ export interface PoemImage {
 
 export const POEM_IMAGES: readonly PoemImage[] = [
   {
-    "file": "shizen-00.png",
+    "file": "bunka-00.png",
     "axes": [
-      "shizen"
+      "bunka"
     ]
   },
   {
-    "file": "teitaku-00.png",
+    "file": "shizen-00.png",
     "axes": [
-      "teitaku"
+      "shizen"
     ]
   },
   {

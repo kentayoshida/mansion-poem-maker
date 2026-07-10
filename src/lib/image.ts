@@ -31,10 +31,21 @@ export const AXIS_THEMES: Record<
   kaiho: { from: "#22506e", to: "#5a97b8", accent: "#eaf6ff", ink: "#f7fdff" },
 };
 
+// 画像を持たない軸の代替軸（例: 邸宅は都心の夜景画像で代替）
+const IMAGE_AXIS_FALLBACK: Partial<Record<Axis, Axis>> = {
+  teitaku: "toshin",
+};
+
 // 支配的属性に合う画像候補を返す
 function candidatesFor(axis: Axis) {
-  const matches = POEM_IMAGES.filter((img) => img.axes.includes(axis));
-  return matches.length > 0 ? matches : POEM_IMAGES;
+  const direct = POEM_IMAGES.filter((img) => img.axes.includes(axis));
+  if (direct.length > 0) return direct;
+  const fallback = IMAGE_AXIS_FALLBACK[axis];
+  if (fallback) {
+    const viaFallback = POEM_IMAGES.filter((img) => img.axes.includes(fallback));
+    if (viaFallback.length > 0) return viaFallback;
+  }
+  return POEM_IMAGES;
 }
 
 export function pickImage(attrs: AttributeVector, rng: SeededRandom): PickedImage {

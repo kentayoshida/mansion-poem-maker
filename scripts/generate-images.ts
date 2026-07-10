@@ -25,33 +25,53 @@
 import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-const ATTRIBUTE_AXES = [
+// 属性軸（src/lib/attributes.ts と一致）。ポエム側では全軸を使うが、
+// 画像は teitaku（邸宅）を単独パターンとして持たず、下の IMAGE_AXES のみ生成する。
+type Axis =
+  | "toshin"
+  | "shizen"
+  | "teitaku"
+  | "bunka"
+  | "kurashi"
+  | "keikan"
+  | "kaiho";
+
+// 画像を生成する軸（teitaku は除外。邸宅系の駅は都心画像で代替＝image.ts のフォールバック）
+const IMAGE_AXES = [
   "toshin",
   "shizen",
-  "teitaku",
   "bunka",
   "kurashi",
   "keikan",
   "kaiho",
 ] as const;
-type Axis = (typeof ATTRIBUTE_AXES)[number];
+type ImageAxis = (typeof IMAGE_AXES)[number];
 
-// 各軸の画像プロンプト（建築・情景ムード。文字・ロゴ・人物は入れない）
-const AXIS_PROMPTS: Record<Axis, string> = {
+// 各軸の画像プロンプト
+// マンションポエムの典型ビジュアル: 都市を上空から鳥瞰し、マンション建設予定地から
+// 地上へ向けて一本の光の柱（ライトビーム）を立ち上げる構図。特定の建物には寄らず、
+// 街並み全体を広く見せる。軸ごとに時間帯・情景・色味を変える。
+// 文字・ロゴ・人物は入れない。上部に空の余白を残す（縦書きポエム用）。
+const BEAM_BASE =
+  "Photorealistic high-altitude aerial bird's-eye drone view looking down over a wide Tokyo " +
+  "townscape, showing the whole cityscape sprawl (not a single building close-up), " +
+  "with a single tall vertical pillar/beam of light shooting straight up from one point " +
+  "in the city, marking a future building site. Wide open sky at the top for negative space. " +
+  "Cinematic real-estate hero visual. No text, no logos, no people. Vertical 3:4 composition.";
+
+const AXIS_PROMPTS: Record<ImageAxis, string> = {
   toshin:
-    "Photorealistic cinematic twilight view of a modern Tokyo high-rise district, glowing office windows and city lights, refined prestigious mood, deep blue and gold tones. No text, no logos, no people. Vertical 3:4 composition.",
+    `${BEAM_BASE} Scene: a vast glittering Tokyo night skyline at twilight; the light beam is a radiant golden-amber pillar; deep blue and gold tones; prestigious mood.`,
   shizen:
-    "Photorealistic serene residential street lined with lush green trees and seasonal foliage in Tokyo, soft morning light, calm natural mood, fresh green tones. No text, no logos, no people. Vertical 3:4 composition.",
-  teitaku:
-    "Photorealistic elegant low-rise luxury residence entrance in an upscale Tokyo neighborhood, tasteful stone, greenery and warm lighting, dignified quiet mood, muted charcoal and gold tones. No text, no logos, no people. Vertical 3:4 composition.",
+    `${BEAM_BASE} Scene: a leafy green Tokyo residential district by day with tree-lined avenues and parks; the light beam is a soft pale-green white pillar; fresh green tones; calm natural mood.`,
   bunka:
-    "Photorealistic traditional Japanese townscape with a historic shrine gate and old shops at dusk, warm lanterns, cultural nostalgic mood, deep crimson and amber tones. No text, no logos, no people. Vertical 3:4 composition.",
+    `${BEAM_BASE} Scene: a historic Japanese townscape with temple roofs and old streets in the evening; the light beam is a warm amber pillar; deep crimson and amber tones; cultural nostalgic mood.`,
   kurashi:
-    "Photorealistic warm friendly local shopping street in Tokyo at golden hour, cozy everyday-life mood, gentle warm tones. No text, no logos, no people. Vertical 3:4 composition.",
+    `${BEAM_BASE} Scene: a friendly low-rise Tokyo neighborhood with a shopping street at golden hour; the light beam is a warm white pillar; cozy warm tones; everyday-life mood.`,
   keikan:
-    "Photorealistic beautiful cityscape viewed from a hill with a wide horizon and soft sky, scenic airy mood, teal and light-blue tones. No text, no logos, no people. Vertical 3:4 composition.",
+    `${BEAM_BASE} Scene: a Tokyo cityscape with a wide horizon and distant hills by day; the light beam is a cool light-blue white pillar; teal and light-blue tones; scenic airy mood.`,
   kaiho:
-    "Photorealistic bright open Tokyo bay waterfront with canals and wide sky, spacious liberating mood, cool light-blue tones. No text, no logos, no people. Vertical 3:4 composition.",
+    `${BEAM_BASE} Scene: a bright open Tokyo bay waterfront with canals and towers by day under a wide sky; the light beam is a bright white-blue pillar; cool light-blue tones; spacious liberating mood.`,
 };
 
 const MODEL = process.env.GEMINI_MODEL ?? "gemini-2.5-flash-image";
@@ -164,7 +184,7 @@ async function main() {
   const manifest = await loadExistingManifest();
   let made = 0;
 
-  outer: for (const axis of ATTRIBUTE_AXES) {
+  outer: for (const axis of IMAGE_AXES) {
     for (let i = 0; i < PER_AXIS; i++) {
       if (made >= LIMIT) break outer;
       const file = `${axis}-${String(i).padStart(2, "0")}.png`;
