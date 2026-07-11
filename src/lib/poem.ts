@@ -36,6 +36,7 @@ export interface PoemResult {
   poem: string[]; // ポエム本文（1〜3行）
   propertyName: string; // 物件名（架空）
   walkMinutes: number; // 「徒歩◯分」
+  promo: string; // 販促フレーズ（3行目）
   themeAxis: Axis; // 支配的な属性軸
   themeAxes: Axis[]; // 上位2軸（デバッグ・表示用）
   image: PickedImage; // 背景画像
@@ -56,6 +57,13 @@ const TRANSITIVE_VERBS = [
   "享受する",
   "育む",
   "誘う",
+] as const;
+
+// 販促フレーズ（カード3行目）。駅ごとに決定的に1つ選ぶ。
+const PROMO_LINES = [
+  "モデルルーム オープン",
+  "豊富な間取り 1K〜4LDK",
+  "先着予約 申込受付中",
 ] as const;
 
 // 属性重みで軸を1つ選ぶ（全て0なら kurashi にフォールバック）
@@ -168,6 +176,9 @@ export function generatePoem(input: string, reroll: number = 0): PoemResult | nu
   // 画像（同一シードで決定的に選択）
   const image = pickImage(attrs, rng);
 
+  // 販促フレーズ（3行目）
+  const promo = rng.pick(PROMO_LINES);
+
   return {
     input,
     place: profile.name,
@@ -177,6 +188,7 @@ export function generatePoem(input: string, reroll: number = 0): PoemResult | nu
     poem,
     propertyName,
     walkMinutes,
+    promo,
     themeAxis: dominantAxis(attrs),
     themeAxes: topAxes(attrs, 2),
     image,
