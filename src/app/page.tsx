@@ -211,6 +211,14 @@ function PoemCard({
           {result.lines[0] ? `${result.lines[0]}／` : ""}
           「{result.place}」駅 徒歩{result.walkMinutes}分（予定）
         </div>
+        <div className="mt-2">
+          <span
+            className="inline-block text-[10px] font-bold tracking-wider px-2 py-[3px] rounded-sm"
+            style={{ backgroundColor: theme.accent, color: "#141414" }}
+          >
+            {result.promo}
+          </span>
+        </div>
       </div>
     </div>
   );
