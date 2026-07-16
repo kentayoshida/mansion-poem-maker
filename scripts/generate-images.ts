@@ -75,6 +75,11 @@ const AXIS_SCENES: Record<ImageAxis, string[]> = {
     "the city before dawn, low fog drifting between towers, first warm light, elevated drone angle; rectangular prism glows soft gold; prestigious mood.",
     "a crisp winter night, distant illumination bokeh, deep navy sky; rectangular prism glows radiant gold; prestigious mood.",
     "a dusk panorama, layered tower silhouettes to the horizon, gold-amber sky; rectangular prism glows warm gold; prestigious mood.",
+    // --- 自然主体（08-11）---
+    "a night skyline embracing a huge dark central park of forest treetops, city lights ringing the sea of trees; golden prism rising from a green clearing; prestigious mood.",
+    "a twilight metropolis with an expansive forested park in the foreground, tree canopy meeting high-rises, purple-gold sky; radiant gold prism in a green clearing; prestigious mood.",
+    "a blue-hour city where a broad green forest-park corridor cuts through the skyscrapers, dense treetops; amber-gold prism among the trees; prestigious mood.",
+    "dawn over a metropolis with a misty forest park at its heart, treetops rising above low fog; soft gold prism in a green clearing; prestigious mood.",
   ],
   shizen: [
     "a leafy green residential district at midday, tree-lined avenues and parks, top-down; rectangular prism glows soft pale-green white; calm natural mood.",
@@ -85,6 +90,11 @@ const AXIS_SCENES: Record<ImageAxis, string[]> = {
     "a riverside greenway with rows of trees and reflective water at midday; rectangular prism glows light-green; calm mood.",
     "a quiet garden district after rain, wet fresh leaves, overcast soft light; rectangular prism glows pale green; calm mood.",
     "a wide green hilly suburb at dusk, layered treetops to the horizon; rectangular prism glows mild green-gold; calm mood.",
+    // --- 自然主体（08-11）---
+    "a vast lush forest park filling most of the frame, dense treetops with a small town only at the edges, midday; pale-green prism in a green clearing; serene mood.",
+    "a deep green woodland of tall trees with winding tree-lined paths and ponds, few rooftops peeking through the canopy; soft green prism among the trees; serene mood.",
+    "an expansive botanical park in fresh green, wide lawns and tree groves, low houses far beyond; white-green prism in a clearing; serene mood.",
+    "a forested river valley in early summer, dense green hills, a small settlement nestled deep in the trees; light-green prism among the woods; serene mood.",
   ],
   bunka: [
     "a historic townscape with temple roofs and old streets at evening, top-down; rectangular prism glows warm amber; crimson-amber tones; nostalgic mood.",
@@ -95,6 +105,11 @@ const AXIS_SCENES: Record<ImageAxis, string[]> = {
     "narrow traditional streets at blue hour, tiled roofs and lit windows; rectangular prism glows warm amber; nostalgic mood.",
     "an autumn temple district, maple reds over old roofs, low warm sun; rectangular prism glows amber; nostalgic mood.",
     "a riverside old town at magic hour, wooden houses and bridges, amber-crimson glow; rectangular prism glows warm amber; nostalgic mood.",
+    // --- 自然主体（08-11）---
+    "a great shrine forest of dark evergreens surrounding old temple roofs, evening; warm amber prism in a forest clearing; nostalgic mood.",
+    "a historic town embraced by densely wooded hills and temple groves at dusk, cedar and maple; amber prism among the trees; nostalgic mood.",
+    "an old townscape with a large tree-filled temple park at its center, tiled roofs beyond, twilight; warm amber prism in a green clearing; nostalgic mood.",
+    "autumn shrine woods, crimson maples and cedars over old streets, a forested park; amber prism in a clearing; nostalgic mood.",
   ],
   kurashi: [
     "a friendly low-rise neighborhood with a shopping street at golden hour, top-down; rectangular prism glows cozy warm white; everyday-life mood.",
@@ -105,6 +120,11 @@ const AXIS_SCENES: Record<ImageAxis, string[]> = {
     "a morning town with light haze, low sun down the streets; rectangular prism glows fresh warm white; everyday-life mood.",
     "autumn suburban streets, roadside trees turning, golden-hour warmth; rectangular prism glows cozy amber; everyday-life mood.",
     "a snowy quiet residential area at dusk, warm lit windows; rectangular prism glows soft amber-white; everyday-life mood.",
+    // --- 自然主体（08-11）---
+    "a friendly neighborhood built around a big leafy community park with lawns and tree groves, golden hour; cozy warm-white prism in the park; everyday-life mood.",
+    "low-rise residential streets threaded with green pocket parks and rows of tall trees, early evening; warm-white prism among the greenery; everyday-life mood.",
+    "a suburban town beside a broad riverside park full of trees and grass, weekend midday; warm-white prism in a green clearing; everyday-life mood.",
+    "a quiet neighborhood wrapped around a wooded hill park, autumn trees, warm lit windows; cozy amber prism among the trees; everyday-life mood.",
   ],
   keikan: [
     "a cityscape with a wide horizon and distant hills at midday, top-down; rectangular prism glows cool light-blue white; teal tones; scenic airy mood.",
@@ -115,6 +135,11 @@ const AXIS_SCENES: Record<ImageAxis, string[]> = {
     "a sea-of-clouds dawn over a low city, pastel sky; rectangular prism glows cool light-blue; scenic mood.",
     "a sunset over a broad townscape, gradient orange-to-teal sky; rectangular prism glows cool blue accent; scenic mood.",
     "a winter clear-air panorama, distant snow-capped ridges; rectangular prism glows bright blue-white; scenic mood.",
+    // --- 自然主体（08-11）---
+    "a townscape framed by deep forested green hills and a wide horizon, midday; cool light-blue prism in a green valley clearing; scenic mood.",
+    "a city nestled below layered forest ridgelines at dusk, tree-covered slopes all around; cool blue prism among hillside trees; scenic mood.",
+    "a green plateau park of groves and lawns overlooking distant rooftops to a bright horizon; teal-blue prism in a clearing; scenic mood.",
+    "forested hills wreathed in morning mist above a low town, a sea of treetops; cool light-blue prism rising from the woods; scenic mood.",
   ],
   kaiho: [
     "a bright bay waterfront with canals and towers under a wide sky at midday, top-down; rectangular prism glows bright white-blue; spacious liberating mood.",
@@ -125,6 +150,11 @@ const AXIS_SCENES: Record<ImageAxis, string[]> = {
     "a dawn over the bay, soft pastel sky and still water; rectangular prism glows gentle white-blue; spacious mood.",
     "a breezy summer waterfront, scattered clouds over a deep-blue sea; rectangular prism glows bright white-blue; spacious mood.",
     "a sunset bay panorama, wide horizon, warm-to-cool sky gradient; rectangular prism glows cool white-blue accent; spacious mood.",
+    // --- 自然主体（08-11）---
+    "a spacious bayside park of wide lawns and tree groves along the water under a vast sky, midday; bright white-blue prism in the green park; spacious mood.",
+    "a broad riverside greenbelt with tree-lined promenades and open water at dusk; cool white-blue prism among the trees; spacious mood.",
+    "an open waterfront park with scattered woodlands, grass and canals, sunny wide sky; white-blue prism in a green clearing; spacious mood.",
+    "a wide seaside park of meadows and forest groves under a big sky at dawn; gentle white-blue prism among the trees; spacious mood.",
   ],
 };
 
@@ -134,7 +164,8 @@ function promptFor(axis: ImageAxis, i: number): string {
 }
 
 const MODEL = process.env.GEMINI_MODEL ?? "gemini-2.5-flash-image";
-const PER_AXIS = Number(process.env.PER_AXIS ?? 8); // 6軸 × 8 = 48枚
+const PER_AXIS = Number(process.env.PER_AXIS ?? 8); // 1軸あたりの生成枚数（この実行分）
+const START_INDEX = Number(process.env.START_INDEX ?? 0); // 追記用オフセット（既存を上書きしない）
 const LIMIT = process.env.LIMIT ? Number(process.env.LIMIT) : Infinity; // 生成上限（サンプル用）
 // AXES=toshin,shizen のように生成対象軸を絞れる（未指定なら全 IMAGE_AXES）
 const AXES_FILTER = process.env.AXES
@@ -249,8 +280,9 @@ async function main() {
 
   outer: for (const axis of IMAGE_AXES) {
     if (AXES_FILTER && !AXES_FILTER.has(axis)) continue;
-    for (let i = 0; i < PER_AXIS; i++) {
+    for (let k = 0; k < PER_AXIS; k++) {
       if (made >= LIMIT) break outer;
+      const i = START_INDEX + k;
       const file = `${axis}-${String(i).padStart(2, "0")}.png`;
       try {
         const buf = await callGemini(promptFor(axis, i));
