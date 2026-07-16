@@ -56,6 +56,30 @@ export const POEM_IMAGES: readonly PoemImage[] = [
     ]
   },
   {
+    "file": "bunka-08.png",
+    "axes": [
+      "bunka"
+    ]
+  },
+  {
+    "file": "bunka-09.png",
+    "axes": [
+      "bunka"
+    ]
+  },
+  {
+    "file": "bunka-10.png",
+    "axes": [
+      "bunka"
+    ]
+  },
+  {
+    "file": "bunka-11.png",
+    "axes": [
+      "bunka"
+    ]
+  },
+  {
     "file": "kaiho-00.png",
     "axes": [
       "kaiho"
@@ -99,6 +123,30 @@ export const POEM_IMAGES: readonly PoemImage[] = [
   },
   {
     "file": "kaiho-07.png",
+    "axes": [
+      "kaiho"
+    ]
+  },
+  {
+    "file": "kaiho-08.png",
+    "axes": [
+      "kaiho"
+    ]
+  },
+  {
+    "file": "kaiho-09.png",
+    "axes": [
+      "kaiho"
+    ]
+  },
+  {
+    "file": "kaiho-10.png",
+    "axes": [
+      "kaiho"
+    ]
+  },
+  {
+    "file": "kaiho-11.png",
     "axes": [
       "kaiho"
     ]
@@ -152,6 +200,30 @@ export const POEM_IMAGES: readonly PoemImage[] = [
     ]
   },
   {
+    "file": "keikan-08.png",
+    "axes": [
+      "keikan"
+    ]
+  },
+  {
+    "file": "keikan-09.png",
+    "axes": [
+      "keikan"
+    ]
+  },
+  {
+    "file": "keikan-10.png",
+    "axes": [
+      "keikan"
+    ]
+  },
+  {
+    "file": "keikan-11.png",
+    "axes": [
+      "keikan"
+    ]
+  },
+  {
     "file": "kurashi-00.png",
     "axes": [
       "kurashi"
@@ -195,6 +267,30 @@ export const POEM_IMAGES: readonly PoemImage[] = [
   },
   {
     "file": "kurashi-07.png",
+    "axes": [
+      "kurashi"
+    ]
+  },
+  {
+    "file": "kurashi-08.png",
+    "axes": [
+      "kurashi"
+    ]
+  },
+  {
+    "file": "kurashi-09.png",
+    "axes": [
+      "kurashi"
+    ]
+  },
+  {
+    "file": "kurashi-10.png",
+    "axes": [
+      "kurashi"
+    ]
+  },
+  {
+    "file": "kurashi-11.png",
     "axes": [
       "kurashi"
     ]
@@ -248,6 +344,30 @@ export const POEM_IMAGES: readonly PoemImage[] = [
     ]
   },
   {
+    "file": "shizen-08.png",
+    "axes": [
+      "shizen"
+    ]
+  },
+  {
+    "file": "shizen-09.png",
+    "axes": [
+      "shizen"
+    ]
+  },
+  {
+    "file": "shizen-10.png",
+    "axes": [
+      "shizen"
+    ]
+  },
+  {
+    "file": "shizen-11.png",
+    "axes": [
+      "shizen"
+    ]
+  },
+  {
     "file": "toshin-00.png",
     "axes": [
       "toshin"
@@ -291,6 +411,30 @@ export const POEM_IMAGES: readonly PoemImage[] = [
   },
   {
     "file": "toshin-07.png",
+    "axes": [
+      "toshin"
+    ]
+  },
+  {
+    "file": "toshin-08.png",
+    "axes": [
+      "toshin"
+    ]
+  },
+  {
+    "file": "toshin-09.png",
+    "axes": [
+      "toshin"
+    ]
+  },
+  {
+    "file": "toshin-10.png",
+    "axes": [
+      "toshin"
+    ]
+  },
+  {
+    "file": "toshin-11.png",
     "axes": [
       "toshin"
     ]
